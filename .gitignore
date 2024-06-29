@@ -2,3 +2,5 @@
 __pycache__
 .DS_Store
 .env
+version_simplificada.sublime-workspace
+version_simplificada.sublime-project

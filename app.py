@@ -1445,7 +1445,7 @@ def form_footer():
 
 parametros_iniciales = {
     'user': usuario,
-    'mes': max(dia_laboral(), fecha_inicial).month,
+    'mes': -1,
     'tab_visual': 'tabviz2',
     'tab_edit': 'tab-ed2',
     'rbd_propuesta': None,
@@ -1547,6 +1547,8 @@ def crea_contenido_visualizacion(tab, datos, datos_prop, param):
     State('parametros', 'data'),
 )
 def crea_contenido_edicion(tab, datos, datos_prop, param):
+    if param['mes'] == -1:
+        param['mes'] = max(dia_laboral(), fecha_inicial).month
     if tab == 'tab-ed1':
         param['tab_edit'] = tab
         return form_colegios_prop(datos_prop, param['user']), param
